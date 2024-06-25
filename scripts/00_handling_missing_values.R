@@ -146,4 +146,8 @@ gg_miss_var(data)
 data = data |> 
   mutate_if(is.character, as.factor)
 
-write.csv(data, "data/AMR_Parental_KAP_New.csv", row.names = F)
+install.packages("openxlsx")
+library(openxlsx)
+
+write.xlsx(data, "data/AMR_Parental_KAP.xlsx", rowNames = FALSE)
+sum(is.na(data))
